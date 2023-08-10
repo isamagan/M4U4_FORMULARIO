@@ -14,7 +14,7 @@ router.post('/',async(req, res,next)=>{
         html:nombre + "Se contactó a través de la web y quiere más información a este correo:" + email + ".<br> Además, hizo este comentario: " + mensaje +".<br> Su tel es:" + tel
     }
 
-    var M4U4_FORMULARIO= nodemailer.createM4U4_FORMULARIO({
+    var M4U3_FORMULARIO= nodemailer.createM4U3_FORMULARIO({
 
         host: process.env.SMTP_HOST,
         port: process.env.SMTP_PORT,
@@ -25,7 +25,7 @@ router.post('/',async(req, res,next)=>{
 
         }
     });
-     var info = await M4U4_FORMULARIO.sendMail(obj);
+     var info = await M4U3_FORMULARIO.sendMail(obj);
 
      res.render('contacto',{
         message:'Mensaje enviado correctamente'
